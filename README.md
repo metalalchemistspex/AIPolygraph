@@ -27,3 +27,44 @@ AIPolygraph 2.0 is an autonomous incident response agent built for the SANS SIFT
 ---
 
 ## 🏗️ Architecture
+┌─────────────────────────────────────────────────────────────┐
+│ AIPolygraph Orchestrator │
+│ ┌──────────────────────────────────────────────────────┐ │
+│ │ Event Processing Pipeline │ │
+│ │ Rate Limiting → Module Detection → Response Actions │ │
+│ └──────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+↓
+┌─────────────────────────────────────────┐
+│ 13 Animal Detection Modules │
+├─────────────────────────────────────────┤
+│ 🦉 Sova - Rate limiting/Scanning │
+│ 🐚 Školjka - WAF/Auth bypass │
+│ 🕷️ Pauk - Shadow IT/Injection │
+│ 🕸️ Paučina - Network flow analysis │
+│ 🐜 Termit - File integrity (FIM) │
+│ 🐢 Kornjača - Persistence mechanisms │
+│ 🐦 Kolibri - Process entropy │
+│ 🐙 Hobotnica - Brute force detection │
+│ 🐍 Jegulja - RWX memory regions │
+│ 🪼 Meduza - Log tampering │
+│ 🌾 Prašina - Historical log analysis │
+│ 🕸️ Hvatač snova - Credential breaches │
+│ 🐹 Krtica - Error-based injection │
+└─────────────────────────────────────────┘
+↓
+┌─────────────────────────────────────────┐
+│ SIFT Forensic Collector │
+│ (SQLite-based event aggregation) │
+│ Database: aipolygraph.db (WAL mode) │
+└─────────────────────────────────────────┘
+↓
+┌─────────────────────────────────────────┐
+│ 🦙 LLM SIFT Analyst (Ollama) │
+│ • Severity scoring (1-10) │
+│ • Attack pattern classification │
+│ • MITRE ATT&CK mapping │
+│ • Executive summary generation │
+│ • Rule-based fallback (offline mode) │
+│ • Model: llama3.1:8b (local) │
+└─────────────────────────────────────────┘
